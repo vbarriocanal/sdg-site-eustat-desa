@@ -94,7 +94,8 @@ opensdg.autotrack = function(preset, category, action, label) {
       var colorRangeParts = options.mapOptions.colorRange.split('.'),
           colorRange = window,
           overrideColorRange = true;
-      for (var colorRangePart of colorRangeParts) {
+      for (var i = 0; i < colorRangeParts.length; i++) {
+        var colorRangePart = colorRangeParts[i];
         if (typeof colorRange[colorRangePart] !== 'undefined') {
           colorRange = colorRange[colorRangePart];
         }
@@ -2997,7 +2998,9 @@ var indicatorView = function (model, options) {
 
   this.createIndicatorDownloadButtons = function(indicatorDownloads, indicatorId, el) {
     if (indicatorDownloads) {
-      for (var buttonLabel of Object.keys(indicatorDownloads)) {
+      var buttonLabels = Object.keys(indicatorDownloads);
+      for (var i = 0; i < buttonLabels.length; i++) {
+        var buttonLabel = buttonLabels[i];
         var href = indicatorDownloads[buttonLabel].href;
         var buttonLabelTranslated = translations.t(buttonLabel);
         var gaLabel = buttonLabel + ': ' + indicatorId;
