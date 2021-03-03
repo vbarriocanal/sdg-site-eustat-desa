@@ -34,7 +34,7 @@ title: Indicators For The Sustainable Development Goals
 url: ""
 data_dir: data
 environment: staging
-
+ 
 # Automatically create indicator pages, goal pages,
 # and some other required pages.
 create_indicators:
